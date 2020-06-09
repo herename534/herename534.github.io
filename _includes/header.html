@@ -1,0 +1,22 @@
+<header class="site-header" role="banner">
+  <div class="header-wrapper wrapper">
+    <a class="site-title" href="{{ "/" | relative_url}}">{{ site.title | escape }}</a>
+    <nav class="site-nav">
+      <div class="trigger" id='menu-items'>
+        {% for my_page in site.pages %}
+          {% if my_page.title %}
+            <a class="page-link" href="{{ my_page.url | relative_url }}">{{ my_page.title | escape }}</a>
+          {% endif %}
+        {% endfor %}
+
+        <a class="page-link" href="/feed.xml">RSS</a>
+      </div>
+    </nav>
+
+    {% if paginator.total_posts %}
+      <span class="amount-of-posts">
+        so far I've written {{ paginator.total_posts }} posts
+      </span>
+    {% endif %}
+  </div>
+</header>
