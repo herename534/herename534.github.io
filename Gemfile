@@ -4,7 +4,7 @@ require 'json'
 require 'open-uri'
 versions = JSON.parse(open('https://pages.github.com/versions.json').read)
 
-gem "jekyll", "~>3.8.7"
+gem "jekyll", "~>3.9.0"
 gem "minima", "~> 2.0"
 gem 'github-pages', versions['github-pages']
 group :jekyll_plugins do
